@@ -1,6 +1,6 @@
 pkgbase = sonic-system-info
 	pkgdesc = Display information about your computers hardware on the Sonic desktop
-	pkgver = 6.6.2
+	pkgver = 6.6.3
 	pkgrel = 1
 	url = https://github.com/Sonic-DE/sonic-system-info
 	arch = x86_64
@@ -43,7 +43,7 @@ pkgbase = sonic-system-info
 	optdepends = plasma-disks: SMART devices health monitor
 	provides = kinfocenter
 	conflicts = kinfocenter
-	source = https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.2.tar.gz
-	sha256sums = 3928aa479423c0eaf7bf3a72ad75000d03feb13fbacb69bd9b152feca5968a3a
+	source = https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.3.tar.gz
+	sha256sums = b870994588b93b0b058130eeaeb472dec1185d5ac3536a0793d00bd6e2491528
 
 pkgname = sonic-system-info
