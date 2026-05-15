@@ -1,7 +1,7 @@
 # Maintainer: artist for Sonic-DE
 
 pkgname=sonic-system-info
-pkgver=6.6.4
+pkgver=6.6.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Display information about your computer''s hardware on the Sonic desktop'
@@ -59,4 +59,4 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('6b924706d75a11314c883051fe09edc24615a8b52cb23cd38d35608fb26753cb')
+sha256sums=('0540d408247faaf8b5dc8a4c218228552ae5b92ac2f6581807c5d0a6d9545309')
