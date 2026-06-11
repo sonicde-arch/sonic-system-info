@@ -1,10 +1,12 @@
-# Maintainer: artist for Sonic-DE
+# Maintainer: callmetango
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=sonic-system-info
 pkgver=6.6.5
-_dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
-pkgdesc='Display information about your computer''s hardware on the Sonic desktop'
+pkgrel=2
+pkgdesc='A utility that provides information about a computer system'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-system-info'
 license=(LGPL-2.0-or-later)
@@ -15,14 +17,10 @@ depends=(aha
          glibc
          glu
          iproute2 # ip
-         kauth
          kcmutils
          kconfig
-         kcoreaddons
          kdeclarative
          ki18n
-         kio
-         kirigami
          kservice
          libdisplay-info
          libdrm
@@ -34,19 +32,26 @@ depends=(aha
          qt6-declarative
          sh
          solid
+         sonic-frameworks-auth
+         sonic-frameworks-core-addons
+         sonic-frameworks-io
+         sonic-frameworks-quick-ui
+         systemd-libs
          systemsettings
          vulkan-tools
+         wayland-utils
          xorg-xdpyinfo)
-makedepends=(extra-cmake-modules
-             fwupd
-             kdoctools
+makedepends=(fwupd
+             sonic-frameworks-cmake-modules
+             sonic-frameworks-doctools
              vulkan-headers)
 optdepends=('fwupd: firmware security module'
             'plasma-disks: SMART devices health monitor')
-groups=(sonicde)
-conflicts=(kinfocenter)
 provides=(kinfocenter)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+conflicts=(kinfocenter)
+groups=(sonicde)
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('0540d408247faaf8b5dc8a4c218228552ae5b92ac2f6581807c5d0a6d9545309')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -58,5 +63,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
-sha256sums=('0540d408247faaf8b5dc8a4c218228552ae5b92ac2f6581807c5d0a6d9545309')
